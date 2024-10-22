@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Payment</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:400,500,600,700">
+<style>
+    body {
+        font-family: Prompt, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-size:24px;
+    }
+
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .container {
+        width: 350px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+    }
+    .header {
+        background-color:#13A8FB;
+        color: white;
+        padding: 15px 0;
+    }
+    .header img {
+        width: 30px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .header h1 {
+        display: inline;
+        font-size: 18px;
+        margin: 0;
+    }
+    .qr-code {
+        padding: 0px;
+        position:relative;
+        
+    }
+   
+  
+  .qr-code-img{
+     width: 250px;
+     height: 250px;
+  }
+    .details {
+        padding: 5px;
+        color: #333;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .details p {
+        margin: 5px 0;
+    }
+  .img-logo{
+          position:absolute;
+          z-index:2;
+    width:30px;
+    height:30px;
+    left:45% ;
+    top:45%;
+       }
+   .detail2 {
+        color:#13A8FB;
+     font-weight:500;
+     font-size:16px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://weplus.dplus-groups.com/static/media/logoapp.d9339660.png" alt="Logo">
+            <h1>DPLUS WEPLUS QR</h1>
+        </div>
+        <div class="qr-code">
+            <img class='img-logo'  src="https://weplus.dplus-groups.com/static/media/logoapp.d9339660.png" alt="Logo">
+            <img class="qr-code-img" src="data:image/png;base64,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" alt="QR Code">
+        </div>
+        <div class="details">
+            <p class="detail2">สแกน QR เพื่อรับสิทธิประโยชน์</p>
+            <p>ชื่อ: ${customerData1.customerName}</p>
+            <p>รหัสร้าน : ${customerData1.customerNo}</p>
+        </div>
+   
+</div>
+</body>
+</html>
