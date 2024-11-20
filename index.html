@@ -1,11 +1,67 @@
-<title>FEE PAYMENT</TITLE>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Loading Animation</title>
+    <style>
+        /* Basic body styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* The spinner (loading animation) */
+        .spinner {
+            border: 4px solid #f3f3f3; /* Light gray background */
+            border-top: 4px solid #3498db; /* Blue color for the spinner */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Keyframes to make the spinner rotate */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Container to hold the image */
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Initially hide the image and show the spinner */
+        .image-container img {
+            visibility: hidden;
+            width: 100%;
+        }
+
+        /* Show the image once it's loaded */
+        .image-container img:loaded {
+            visibility: visible;
+        }
+
+        /* Hide the spinner when the image is loaded */
+        .image-container img:loaded + .spinner {
+            display: none;
+        }
+    </style>
+</head>
 <body>
- <center>
-   <b class="txt1">payment qr genrated</b><p>
-   <img   src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDvt9zrHgpWwEAJyqHA7Aj4o7ZGQy4OEGY-hUHO00QzEENDZcRmD0uqVJioXXOlLEuxQHauXJfD7wVJSXDfb8HNG0fgC3Nc6GVm1DeJzKaNVbuJ6N51qYCHurJWlkaoUmrMG1jUXg1drZGWS1p9A5pEeurFiMloC2lNFI42zkvgGdVKB0jwQ0imeKI5Utm/s320/upi_1730107308757.png" style="height:500px; width:300px;" class="qr"/>
-   <p>
-     <b>pay only 999 rupees</b>
-     <p>
-     <b></b>
-      <p>
-        <big><big>VERIFY THE NAME IS WEBDEV TEACH</big></b>
+
+    <!-- Image container with spinner shown before image is loaded -->
+    <div class="image-container">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDvt9zrHgpWwEAJyqHA7Aj4o7ZGQy4OEGY-hUHO00QzEENDZcRmD0uqVJioXXOlLEuxQHauXJfD7wVJSXDfb8HNG0fgC3Nc6GVm1DeJzKaNVbuJ6N51qYCHurJWlkaoUmrMG1jUXg1drZGWS1p9A5pEeurFiMloC2lNFI42zkvgGdVKB0jwQ0imeKI5Utm/s320/upi_1730107308757.png" alt="My Image" />
+        <div class="spinner"></div>
+    </div>
+
+</body>
+</html>
