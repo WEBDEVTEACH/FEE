@@ -1,0 +1,50 @@
+@keyframes shine {
+  10% {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+  100% {
+    opacity: 0;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+  }
+}
+.cont img {
+  width: 100%;
+}
+.cont.active {
+  width: 100%;
+  background: #DEDEDE;
+  height: 454px;
+  position: relative;
+  overflow: hidden;
+}
+.cont.active::after {
+  animation: shine 12s linear;
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -210%;
+  width: 380%;
+  height: 10%;
+  transform: rotate(130deg);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.13) 0, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0) 100%);
+}
+
+button {
+  padding: 5px;
+  fong-size: 20px;
+  border-radius: 3px;
+  margin: 20px;
+  font-family: Helvetica;
+}
+button:hover {
+  background: #DEDEDE;
+  color: black;
+  cursor: pointer;
+}
